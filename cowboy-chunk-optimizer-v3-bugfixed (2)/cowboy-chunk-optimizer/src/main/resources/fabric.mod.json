@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "cowboy-chunk-optimizer",
+  "version": "${version}",
+  "name": "Cowboy's Chunk Optimizer",
+  "description": "The most aggressive chunk loading and rendering optimization available for Fabric 1.21.1. Eliminates frame drops during chunk generation through adaptive GPU upload budgeting, predictive pre-sorting, velocity-aware frustum scheduling, chunk mesh pooling, section graph pre-culling, and smooth fade rendering. Fully configurable.",
+  "authors": ["Cowboy"],
+  "contact": {
+    "sources": "https://modrinth.com/user/Cowboy",
+    "issues": "https://github.com/cowboy/chunk-optimizer/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/cowboy-chunk-optimizer/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.cowboy.chunkoptimizer.CowboyChunkOptimizerClient"],
+    "modmenu": ["dev.cowboy.chunkoptimizer.screen.ModMenuIntegration"]
+  },
+  "mixins": ["cowboy-chunk-optimizer.mixins.json"],
+  "accessWidener": "cowboy-chunk-optimizer.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "cloth-config2": "*",
+    "modmenu": "*",
+    "sodium": "*"
+  }
+}

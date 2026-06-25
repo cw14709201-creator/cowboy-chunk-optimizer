@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.cowboy.chunkoptimizer.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "MixinChunkBuilder",
+    "MixinChunkBuilderUploadLoop",
+    "MixinChunkRenderDispatcher",
+    "MixinWorldRenderer",
+    "MixinClientChunkManager",
+    "MixinBuiltChunkStorage",
+    "MixinChunkRendererRegionBuilder",
+    "MixinLightEngine",
+    "MixinTranslucentSort",
+    "MixinBlockEntityRenderer",
+    "MixinDimensionChange",
+    "MixinGameOptions"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
