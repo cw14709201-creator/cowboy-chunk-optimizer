@@ -1,0 +1,29 @@
+accessWidener	v2	named
+
+# ── ChunkBuilder internals ──────────────────────────────────────────────────
+# Upload queue for reading pending section count
+accessible	field	net/minecraft/client/render/chunk/ChunkBuilder	uploadQueue	Ljava/util/concurrent/BlockingQueue;
+# Task count for monitoring
+accessible	field	net/minecraft/client/render/chunk/ChunkBuilder	queuedTaskCount	I
+# Worker thread pool (for DynamicThreadScaler to register)
+accessible	field	net/minecraft/client/render/chunk/ChunkBuilder	executor	Ljava/util/concurrent/ThreadPoolExecutor;
+
+# ── ChunkRenderDispatcher ────────────────────────────────────────────────────
+# Rebuild scheduling queue — needed to replace with priority-sorted queue
+accessible	field	net/minecraft/client/render/chunk/ChunkRenderDispatcher	rebuildQueue	Ljava/util/concurrent/BlockingQueue;
+
+# ── ChunkSection — section occupancy checks ──────────────────────────────────
+# isEmpty() — returns true when block count == 0 (all air)
+accessible	method	net/minecraft/world/chunk/ChunkSection	isEmpty	()Z
+# hasOnlyAir() — stricter version, for culling invisible-only sections
+accessible	method	net/minecraft/world/chunk/ChunkSection	hasOnlyAir	()Z
+# getNonEmptyBlockCount — used by palette hasher
+accessible	method	net/minecraft/world/chunk/ChunkSection	getNonEmptyBlockCount	()S
+
+# ── BuiltChunkStorage ────────────────────────────────────────────────────────
+# Access built section array for visibility graph construction
+accessible	field	net/minecraft/client/render/chunk/BuiltChunkStorage	chunks	[Lnet/minecraft/client/render/chunk/ChunkBuilder$BuiltChunk;
+
+# ── ChunkBuilder.BuiltChunk — individual section access ─────────────────────
+accessible	class	net/minecraft/client/render/chunk/ChunkBuilder$BuiltChunk
+accessible	field	net/minecraft/client/render/chunk/ChunkBuilder$BuiltChunk	origin	Lnet/minecraft/util/math/BlockPos;
